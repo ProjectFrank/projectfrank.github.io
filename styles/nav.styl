@@ -1,0 +1,60 @@
+animationSpeed = 0.5s
+
+nav
+  position fixed
+  top 0
+  left 0
+  z-index 999
+  width 100%
+  background rgba(0, 0, 0, 0.4)
+  h1
+    float left
+    padding 0 1em
+    visibility visible
+    opacity 1
+    transition opacity animationSpeed linear
+    font-size 3rem
+    color #fff
+    line-height 56px
+
+nav.hide-logo
+  h1
+    opacity 0
+    visibility hidden
+  .nav
+    right 50%
+    transform translateX(50%)
+  .nav__item
+    transform scale(1.3)
+    &:last-child
+      padding-right 1.5em
+
+.nav
+  position absolute
+  display block
+  top 0
+  right 0
+  margin 0
+  padding 2rem 0
+  list-style none
+  transition right animationSpeed ease-in-out, transform animationSpeed ease-in-out
+
+.nav__item
+  display block
+  float left
+  padding 0 1.5em
+  text-align center
+  text-transform uppercase
+  font-size 1.3rem
+  letter-spacing 0.1em
+  color #fff
+  transition transform animationSpeed linear, padding animationSpeed linear
+  a
+    position relative
+    display block
+    width 100%
+    height 100%    
+  
+.fa-bars
+  float right
+  display none

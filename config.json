@@ -1,0 +1,10 @@
+{
+    "locals": {
+	"title": "Bare minimum wintersmith site"
+    },
+    "plugins": [
+	"./node_modules/wintersmith-stylus/",
+	"./node_modules/wintersmith-articles-helper/",
+	"./helpers/getProjects.js"
+    ]
+}

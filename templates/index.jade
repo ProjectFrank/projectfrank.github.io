@@ -1,0 +1,104 @@
+extends ./layout.jade
+
+block append vars
+  - var projects = env.helpers.getProjects(contents);
+
+block content
+  div.placeholder#top
+  header.cascade.cascade__header
+    video(id="video-background" autoplay loop muted)
+      source(src="/img/rising_snow_animation.webm" type="video/webm")
+    div.logo
+      h1 Fran
+        span.last-letter k
+        |  Wan
+        span.last-letter g
+      p.logo__tagline Front-end Web Wizard
+
+  div.placeholder
+  header.cascade.cascade__header.cascade__header--about
+    h2.cascade__header__title About
+  div.placeholder#about
+  section.cascade.cascade__content.cascade__content--about
+    div.cascade__content__wrapper.clearfix
+      img('src=img/dp.jpg').cascade__content--about__portrait
+      div.cascade__content--about__bio
+        h3 About Me
+        p.
+          I'm a Front-End Web Developer based in Toronto, Ontario. I love making interactive websites that are engaging, intuitive, and backed by solid logic. Having recently finished my program and HackerYou, I am currently available for full-time employment.
+        p.
+          I am a graduate of the HackerYou Front-End Web Development Immersive, and I have a Bachelor of Business Administration from the Schulich School of Business.
+        div.tools.clearfix
+          div.tools__half-column
+            h3 Technologies
+            ul
+              li HTML5/CSS3
+              li Responsive Design
+              li JavaScript
+              li ReactJS
+              li AJAX
+              li jQuery
+          div.tools__half-column
+            h3 Tools
+            ul
+              li Emacs
+              li Jade
+              li Stylus
+              li Sass
+              li Gulp
+              li Git
+
+  div.placeholder
+  header.cascade.cascade__header.cascade__header--portfolio
+    h2.cascade__header__title Portfolio
+  div.placeholder#portfolio
+  section.cascade.cascade__content.cascade__content--portfolio
+    div.slider
+      div.slider__strip
+        each project in projects
+          div.slider__project
+            div.slider__project__thumbnail
+              a(href=project.metadata.link target="_blank")
+                img(src='/img/'+project.metadata.thumbnail)
+            div.slider__project__info
+              h3.slider__project__title= project.title
+              p.slider__project__description= project.metadata.description
+              p.slider__project__tech= project.metadata.tech
+      i.fa.fa-angle-left.slider__control.slider__control--left
+      i.fa.fa-angle-right.slider__control.slider__control--right.active
+  div.placeholder
+  header.cascade.cascade__header.cascade__header--contact
+    h2.cascade__header__title Contact
+  div.placeholder#contact
+  section.cascade.cascade__content.cascade__content--contact
+    div.cascade__content__wrapper
+      p.
+        I love learning new technologies and building awesome things with the latest tools. I'm always up for a challenge and working with new people.
+      p.
+        If you like what you see, get in touch!
+      a(href="http://github.com/ProjectFrank" target="_blank")
+        div.contact-card
+          div.flippy-card
+            div.flippy-card__front: i.fa.fa-github-square 
+            div.flippy-card__back: p ProjectFrank
+      a(href="http://twitter.com/TheFrankProject" target="_blank")
+        div.contact-card
+          div.flippy-card
+            div.flippy-card__front: i.fa.fa-twitter-square
+            div.flippy-card__back: p @TheFrankProject
+      a(href="https://www.linkedin.com/pub/frank-wang/18/697/692" target="_blank")
+        div.contact-card
+          div.flippy-card
+            div.flippy-card__front: i.fa.fa-linkedin-square
+            div.flippy-card__back: p LinkedIn
+      br
+      a(target="_blank")
+        div.contact-card
+          div.flippy-card
+            div.flippy-card__front: i.fa.fa-envelope-square
+            div.flippy-card__back: p
+      a(target="_blank")
+        div.contact-card
+          div.flippy-card
+            div.flippy-card__front: i.fa.fa-phone-square
+            div.flippy-card__back: p
