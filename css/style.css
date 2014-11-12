@@ -59,6 +59,13 @@ h1,
   letter-spacing: 0.2em;
   word-spacing: 0.2em;
 }
+@media (max-width: 600px) {
+  h1,
+  .cascade__header__title,
+.cascade__header__title {
+    font-size: 8rem;
+  }
+}
 h3 {
   font-size: 4rem;
 }
@@ -329,6 +336,11 @@ nav.hide-logo .nav__item a {
   color: #fff;
   text-align: center;
 }
+@media (max-width: 500px) {
+  .cascade__header__title {
+    font-size: 6rem;
+  }
+}
 .cascade__header--about {
   background-color: #eee;
   background-image: url("/img/about.jpg");
@@ -349,6 +361,11 @@ nav.hide-logo .nav__item a {
 .tools__half-column {
   width: 50%;
   float: left;
+}
+@media (max-width: 600px) {
+  .tools__half-column {
+    width: 100%;
+  }
 }
 .tools__half-column h3 {
   color: #6d78da;
@@ -398,6 +415,8 @@ nav.hide-logo .nav__item a {
   z-index: 5;
 }
 .cascade__content--portfolio {
+  min-height: 650px;
+  padding: 50px 0;
   z-index: 6;
 }
 .logo {
@@ -414,6 +433,11 @@ nav.hide-logo .nav__item a {
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 300;
+}
+@media (max-width: 600px) {
+  .logo p {
+    font-size: 2.2rem;
+  }
 }
 .last-letter {
   letter-spacing: normal;
@@ -484,13 +508,9 @@ nav.hide-logo .nav__item a {
   transform: rotateX(180deg);
 }
 .slider {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+  position: relative;
   width: 80%;
+  margin: 0 auto;
   height: 85vh;
 }
 .slider__strip {
@@ -574,10 +594,10 @@ nav.hide-logo .nav__item a {
   animation-play-state: paused;
 }
 .slider__control--left {
-  right: 100%;
+  left: 0;
 }
 .slider__control--right {
-  left: 100%;
+  right: 0;
 }
 @-webkit-keyframes pulse {
   0% {
