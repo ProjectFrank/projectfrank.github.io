@@ -9612,4 +9612,28 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
     $window.on('resize orientationChanged', function() {
 	moveHighlighter();
     });
+
+    var showNav = false;
+
+    $('.lines-button').on('click', function() {
+	if (!showNav) {
+	    $(this).addClass('close');
+	    $('.nav').addClass('show');
+	    showNav = true;
+	}
+    });
+
+    $('.nav').on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
+	if ($(this).hasClass('show')) {
+	    $('html').on('click', function() {
+		if (showNav) {
+		    $('.lines-button').removeClass('close');
+		    $('.nav').removeClass('show');
+		    showNav = false;
+		    $(this).off('click');
+		}
+	    });
+	}
+    });
+
 })(jQuery);
