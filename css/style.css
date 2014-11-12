@@ -102,7 +102,8 @@ nav.hide-logo .nav__item {
 nav.hide-logo .nav__item:last-child {
   padding-right: 1.5em;
 }
-.nav {
+.nav,
+nav.hide-logo .nav {
   position: absolute;
   display: block;
   top: 0;
@@ -113,7 +114,8 @@ nav.hide-logo .nav__item:last-child {
   transition: right 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
   transition: right 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
-.nav__item {
+.nav__item,
+nav.hide-logo .nav__item {
   display: block;
   float: left;
   padding: 0 1.5em;
@@ -125,7 +127,8 @@ nav.hide-logo .nav__item:last-child {
   transition: -webkit-transform 0.5s linear, padding 0.5s linear;
   transition: transform 0.5s linear, padding 0.5s linear;
 }
-.nav__item a {
+.nav__item a,
+nav.hide-logo .nav__item a {
   position: relative;
   display: block;
   width: 100%;
@@ -213,7 +216,8 @@ nav.hide-logo .nav__item:last-child {
   .highlighter {
     display: none;
   }
-  .nav {
+  .nav,
+  nav.hide-logo .nav {
     position: fixed;
     top: 56px;
     -webkit-transform-origin: 0 0;
@@ -229,7 +233,8 @@ nav.hide-logo .nav__item:last-child {
     transition: -webkit-transform 0.3s ease-out;
     transition: transform 0.3s ease-out;
   }
-  .nav:after {
+  .nav:after,
+  nav.hide-logo .nav:after {
     content: ' ';
     display: block;
     position: absolute;
@@ -241,11 +246,25 @@ nav.hide-logo .nav__item:last-child {
     transition: width 0.3s 0.6s ease-out;
     z-index: 1000;
   }
+  .nav.show,
+  nav.hide-logo .nav.show {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+  .nav.show:after,
+  nav.hide-logo .nav.show:after {
+    width: calc(100vw - 200px);
+  }
+  .nav__item,
+  nav.hide-logo .nav__item {
+    float: none;
+    text-align: right;
+    padding: 40px 1em;
+    font-size: 1.6rem;
+  }
   nav.hide-logo .nav {
     right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
   }
   nav.hide-logo .nav__item {
     -webkit-transform: none;
@@ -254,20 +273,6 @@ nav.hide-logo .nav__item:last-child {
   }
   nav.hide-logo .nav__item:last-child {
     padding-right: 1em;
-  }
-  .nav.show {
-    -webkit-transform: scaleY(1);
-    -ms-transform: scaleY(1);
-    transform: scaleY(1);
-  }
-  .nav.show:after {
-    width: calc(100vw - 200px);
-  }
-  .nav__item {
-    float: none;
-    text-align: right;
-    padding: 40px 1em;
-    font-size: 1.6rem;
   }
 }
 #video-background {
