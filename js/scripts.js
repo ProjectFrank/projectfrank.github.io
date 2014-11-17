@@ -9512,9 +9512,10 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 	}
 
 	// Logo hiding logic
-	var aboutBot = $aboutHeader.offset().top + $aboutHeader.outerHeight() - $nav.height();
-	var docViewBot = $window.scrollTop() + $window.height();
-	if (docViewBot >= aboutBot) {
+	var aboutPlaceholderTop = $aboutHeader.prev().offset().top;
+	var navBot = $window.scrollTop() + $nav.height();
+
+	if (navBot >= aboutPlaceholderTop) {
 	    if (logoHidden) {
 		$nav.removeClass('hide-logo');
 		logoHidden = false;
