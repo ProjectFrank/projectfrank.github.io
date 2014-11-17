@@ -173,6 +173,9 @@ nav.hide-logo .nav__item a {
   top: -0.925rem;
 }
 .lines-button {
+  position: absolute;
+  top: 0;
+  right: 0;
   padding: 1.85rem 1.3875rem;
   float: right;
   background: none;
@@ -453,9 +456,20 @@ nav.hide-logo .nav__item a {
 .cascade__content--contact .cascade__content__wrapper {
   text-align: center;
 }
+@media (max-width: 550px) {
+  .cascade__content--contact .cascade__content__wrapper {
+    line-height: 0;
+  }
+}
 .cascade__content--contact .cascade__content__wrapper > p {
   text-align: center;
   font-style: italic;
+}
+@media (max-width: 550px) {
+  .contact-link {
+    display: block;
+    width: 100%;
+  }
 }
 .contact-card {
   display: inline-block;
