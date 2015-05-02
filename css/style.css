@@ -319,7 +319,7 @@ nav.hide-logo .nav__item a {
   overflow: hidden;
 }
 .cascade {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   position: relative;
   -webkit-transform: translateZ(0);
